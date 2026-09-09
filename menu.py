@@ -32,5 +32,8 @@ def menu(lista):
         c += 1
     while True:
         opc = leiaOpc("Choose an option: ")
+        if 1 <= opc <= len(lista):
+            return opc
+        print("\033[0;31mPlease enter a valid option.\033[0;31m")
 
     
