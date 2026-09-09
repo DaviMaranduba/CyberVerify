@@ -1,6 +1,7 @@
 import menu
+from analysis import analyze
 
-resposta = menu.menu(["Analyze message", "Exit"])
-if resposta == 1:
-	pass
-    
+option = menu.menu(["Analyze message", "Exit"])
+if option == 1:
+    menu.cabecalho("MESSAGE ANALYSIS")
+    analyze()
