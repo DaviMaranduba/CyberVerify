@@ -1,3 +1,17 @@
+def leiaOpc(msg):
+    while True:
+        try:
+            n = int(input(msg))
+        except TypeError:
+            print("\033[0;31mInvalid data type. Please enter the correct type.\033[m")
+        except ValueError:
+            print("\033[0;31mInvalid value. Please enter a valid option.\033[m")
+        except KeyboardInterrupt:
+            print("\033[0;31mOperation cancelled by user.\033[m")
+
+
+
+
 def linha(tam = 40):
     return "=" * tam
 
@@ -16,4 +30,7 @@ def menu(lista):
     for item in lista:
         print(f"{c} - {item}")
         c += 1
+    while True:
+        opc = leiaOpc("Choose an option: ")
+
     
