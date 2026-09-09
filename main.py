@@ -1,3 +1,6 @@
 import menu
 
-menu.menu(["Analisar mensagem", "Sair"])
+resposta = menu.menu(["Analyze message", "Exit"])
+if resposta == 1:
+	pass
+    
