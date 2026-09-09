@@ -8,24 +8,27 @@ def leiaOpc(msg):
             print("\033[0;31mInvalid value. Please enter a valid option.\033[m")
         except KeyboardInterrupt:
             print("\033[0;31mOperation cancelled by user.\033[m")
+            return 0
+        else:
+            return n
 
 
 
 
-def linha(tam = 40):
-    return "=" * tam
+def linha(tam = 32):
+    return "\033[0;34m=\033[0m" * tam
 
 
 def cabecalho(txt):
     print(linha())
     print()
-    print(txt.rjust(24))
+    print(txt.center(40))
     print()
     print(linha())
 
 
 def menu(lista):
-    cabecalho("CYBERVERIFY")
+    cabecalho("\033[0;36mCYBERVERIFY\033[0m")
     c = 1
     for item in lista:
         print(f"{c} - {item}")
@@ -34,6 +37,6 @@ def menu(lista):
         opc = leiaOpc("Choose an option: ")
         if 1 <= opc <= len(lista):
             return opc
-        print("\033[0;31mPlease enter a valid option.\033[0;31m")
+        print("\033[0;31mPlease enter a valid option.\033[0m")
 
     
