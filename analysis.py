@@ -8,13 +8,13 @@ def analyze():
             found_words.append(word)
 
     if found_words:
-        print("Suspicious words found:", found_words)
+        print(f"\033[33m*SUSPICIOUS WORDS FOUND*:\033[0m", found_words)
     else:
-        print("No suspicious words found.")
+        print("\033[32m*NO SUSPICIOUS WORDS FOUND.*\033[0m")
 
     if len(found_words) == 0:
-        return "Low Risk"
+        return "\033[32m🟢 LOW RISK\033[m"
     elif len(found_words) <= 2:
-        return "Medium Risk"
+        return "\033[33m🟡 MEDIUM RISK\033[m"
     else:
-        return "High Risk"
+        return "\033[31m🔴 HIGH RISK\033[m"
