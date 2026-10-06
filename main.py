@@ -2,13 +2,15 @@ import menu
 import analysis
 from time import sleep
 
+
 while True:
-    option = menu.menu(["\033[0;37mAnalyze message\033[0m", "\033[0;37mExit\033[0m"])
+    option = menu.menu(["[bold white]Analyze a message[/]", "[bold dim]Exit[/]"])
     if option == 1:
-        menu.cabecalho("\033[0;36mMESSAGE ANALYSIS\033[0m")
+        menu.cabecalho("MESSAGE ANALYSIS")
         print("...")
         sleep(1)
-        result = analysis.analyze()
+        message = input("\033[0;36mType the message to analyze:\033[0m ")
+        result = analysis.get_risk_level(message)
         print(">Scanning Risk...<")
         sleep(3)
         print(result)
