@@ -1,3 +1,19 @@
+from rich.console import Group
+from rich.panel import Panel
+from rich.text import Text
+from rich.align import Align
+from rich.console import Console
+
+console = Console()
+titulo = Text("CYBERVERIFY", style="bold bright_cyan")
+subtitulo = Text("Suspicious Message Analyzer", style="dim")
+
+conteudo = Group(
+    Align.center(titulo),
+    Align.center(subtitulo),
+)
+
+console.print(Panel(conteudo, border_style="cyan", padding=(1,4),))
 def leiaOpc(msg):
     while True:
         try:
@@ -18,21 +34,9 @@ def leiaOpc(msg):
 def linha(tam = 32):
     return "\033[0;34m=\033[0m" * tam
 
-
-def cabecalho(txt):
-    print(linha())
-    print()
-    print(txt.center(40))
-    print()
-    print(linha())
-
-
 def menu(lista):
-    cabecalho("\033[0;36mCYBERVERIFY\033[0m")
-    c = 1
-    for item in lista:
-        print(f"{c} - {item}")
-        c += 1
+    for c, item in enumerate(lista, start=1):
+        console.print(f"[cyan]{c}[/cyan] - {item}")
     while True:
         opc = leiaOpc("\033[0;94mChoose an option:\033[0m ")
         if 1 <= opc <= len(lista):
