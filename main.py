@@ -17,11 +17,31 @@ while True:
             sleep(3)
         menu.console.print(result)
         sleep(1)
-        table = Table()
-        table.add_column(":warning: Detected suspicious word", style="bold green on black", header_style="bold bright_red")
-        for word in analyzer.found_words:
-            table.add_row(word)
-        menu.console.print(Panel(table, title="[bold bright_cyan]Suspicious words:[/bold bright_cyan]", border_style="cyan"))
+        if analyzer.found_words:
+            table = Table()
+            table.add_column(
+                ":warning: Detected suspicious word",
+                style="bold green on black",
+                header_style="bold bright_red",
+            )
+            for word in analyzer.found_words:
+                table.add_row(word)
+            menu.console.print(
+                Panel(
+                    table,
+                    title="[bold bright_cyan]Suspicious words:[/bold bright_cyan]",
+                    border_style="cyan",
+                )
+            )
+        else:
+            menu.console.print(
+                Panel(
+                    "[bold green]No suspicious words were detected.[/]\n"
+                    "[green]This message appears low risk.[/]",
+                    title="[bold bright_green]LOW RISK[/]",
+                    border_style="green",
+                )
+            )
         sleep(1.5)
     elif option == 2:
         with menu.console.status("[orange1]Exiting the program...[/orange1]", spinner="dots", ):
