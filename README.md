@@ -19,7 +19,15 @@ The project was developed with a focus on **programming practice, modularization
 * **Python** - Programming language used to develop the application.
 * **Git** - Version control.
 * **GitHub** - Code hosting and project documentation.
-* **ANSI Escape Codes** - Used for terminal styling and visual identification of analysis results.
+* **Rich** - Used for styled terminal panels and menu output.
+
+## Installation
+
+Install the dependencies in your active Python environment:
+
+```bash
+python -m pip install -r requirements.txt
+```
 
 ## Project Structure
 
@@ -31,7 +39,8 @@ CyberVerify/
 ├── main.py
 ├── menu.py
 ├── analysis.py
-└── rules.py
+├── rules.py
+└── requirements.txt
 ```
 
 ### `main.py`
