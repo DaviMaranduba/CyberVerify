@@ -6,7 +6,6 @@ from time import sleep
 while True:
     option = menu.menu(["[bold white]Analyze a message[/]", "[bold dim]Exit[/]"])
     if option == 1:
-        menu.cabecalho("MESSAGE ANALYSIS")
         print("...")
         sleep(1)
         message = input("\033[0;36mType the message to analyze:\033[0m ")

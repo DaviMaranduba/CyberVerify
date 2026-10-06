@@ -17,7 +17,7 @@ console.print(Panel(conteudo, border_style="cyan", padding=(1,4),))
 def leiaOpc(msg):
     while True:
         try:
-            n = int(input(msg))
+            n = int(console.input(msg))
         except TypeError:
             print("\033[0;31mInvalid data type. Please enter the correct type.\033[m")
         except ValueError:
@@ -29,16 +29,11 @@ def leiaOpc(msg):
             return n
 
 
-
-
-def linha(tam = 32):
-    return "\033[0;34m=\033[0m" * tam
-
 def menu(lista):
     for c, item in enumerate(lista, start=1):
         console.print(f"[cyan]{c}[/cyan] - {item}")
     while True:
-        opc = leiaOpc("\033[0;94mChoose an option:\033[0m ")
+        opc = leiaOpc("[bold bright_cyan]Choose an option:[/bold bright_cyan] ")
         if 1 <= opc <= len(lista):
             return opc
         print("\033[0;31mPlease enter a valid option.\033[0m")
